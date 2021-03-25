@@ -7,7 +7,9 @@
 
 import UIKit
 
-protocol FormDemoViewInput: AnyObject {
+protocol FormDemoViewInput: FormViewInput {
+
+  var dataSource: FormDataSource { get }
 
   func configure()
 }
@@ -15,6 +17,7 @@ protocol FormDemoViewInput: AnyObject {
 protocol FormDemoViewOutput: AnyObject {
 
   func viewDidLoad()
+  func didTapSaveButton()
 }
 
 final class FormDemoViewController: FormViewController {
@@ -27,10 +30,37 @@ final class FormDemoViewController: FormViewController {
   }
 }
 
+// MARK: - Private
+
+extension FormDemoViewController {
+
+  private func setUpLayout() {}
+
+  private func setUpViews() {
+    navigationItem.title = "Form Demo"
+    view.backgroundColor = .white
+
+    navigationItem.rightBarButtonItem = UIBarButtonItem(
+      title: "Save",
+      style: .done,
+      target: self,
+      action: #selector(didTapSaveButton)
+    )
+
+    tableView.keyboardDismissMode = .onDrag
+  }
+
+  @objc private func didTapSaveButton() {
+    output?.didTapSaveButton()
+  }
+}
+
 // MARK: - FormDemoViewInput
+
 extension FormDemoViewController: FormDemoViewInput {
 
   func configure() {
-    view.backgroundColor = .white
+    setUpLayout()
+    setUpViews()
   }
 }
