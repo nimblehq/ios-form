@@ -16,7 +16,7 @@ final class FormDemoRouter {
 
     weak var view: FormDemoViewInput?
 
-    private var viewController: UIViewController? {
+    var viewController: UIViewController? {
         view as? UIViewController
     }
 }
@@ -31,3 +31,7 @@ extension FormDemoRouter: FormDemoRouterInput {
         window.rootViewController = navigationController
     }
 }
+
+// MARK: - OpenSelectRouterInput
+
+extension FormDemoRouter: OpenSelectRouterInput {}

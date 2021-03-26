@@ -12,6 +12,8 @@ final class TextInputFormField {
     let key: String
     var viewModel: TextInputViewModel
 
+    weak var delegate: FormFieldDelegate?
+
     init(key: String, viewModel: TextInputViewModel) {
         self.key = key
         self.viewModel = viewModel

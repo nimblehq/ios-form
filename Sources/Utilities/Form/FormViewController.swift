@@ -112,4 +112,9 @@ extension FormViewController: UITableViewDelegate {
         guard let header = dataSource.sections[section].header else { return .zero }
         return header.height
     }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let field = dataSource.sections[indexPath.section].fields[indexPath.row]
+        field.tableView(tableView, didSelectRowAt: indexPath)
+    }
 }
