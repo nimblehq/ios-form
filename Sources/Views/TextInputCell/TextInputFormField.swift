@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class TextInputFormField: FieldViewModel {
+final class TextInputFormField {
 
   let key: String
   var viewModel: TextInputViewModel
@@ -33,6 +33,20 @@ extension TextInputFormField: FormField {
     cell.delegate = self
     cell.configure(viewModel)
     return cell
+  }
+}
+
+// MARK: - FieldDataSource
+
+extension TextInputFormField: FieldDataSource {
+
+  var value: String? {
+    get {
+      return viewModel.value
+    }
+    set {
+      viewModel.value = newValue
+    }
   }
 }
 

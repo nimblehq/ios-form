@@ -31,26 +31,40 @@ final class FormDataSource {
     self.sections = sections
   }
 
-  func getViewModel<FormField: FieldViewModel>(from formField: FormField.Type, byKey key: String) -> FormField.ViewModel? {
-    let field = fields.first(where: { $0.key == key }) as? FormField
-    return field?.viewModel
+  func updateValue<Field: FieldDataSource>(for formField: Field.Type, with value: Field.Value, byKey key: String) {
+    guard
+      let indexPath = indexPath(of: key),
+      let field = sections[indexPath.section].fields[indexPath.row] as? Field
+    else { return }
+    field.value = value
+    if let field = field as? FormField {
+      sections[indexPath.section].fields[indexPath.row] = field
+      reloadField(for: formField, byKey: key)
+    }
   }
 
-  func updateViewModel<Field: FieldViewModel>(for formField: Field.Type, with viewModel: Field.ViewModel, byKey key: String) {
+  func getValue<Field: FieldDataSource>(of formField: Field.Type, byKey key: String) -> Field.Value? {
+    guard
+      let indexPath = indexPath(of: key),
+      let field = sections[indexPath.section].fields[indexPath.row] as? Field
+    else { return nil }
+    return field.value
+  }
+
+  private func reloadField<Field: FieldDataSource>(for formField: Field.Type, byKey key: String) {
+    if let indexPath = indexPath(of: key) {
+      delegate?.dataSource(self, didUpdateAt: indexPath)
+    }
+  }
+
+  private func indexPath(of key: String) -> IndexPath? {
     var indexPath: IndexPath?
     for (i, section) in sections.enumerated() {
       if let j = section.fields.firstIndex(where: { $0.key == key }) {
         indexPath = IndexPath(row: j, section: i)
+        break
       }
     }
-    guard
-      let ip = indexPath,
-      let field = sections[ip.section].fields[ip.row] as? Field
-    else { return }
-    field.viewModel = viewModel
-    if let field = field as? FormField {
-      sections[ip.section].fields[ip.row] = field
-      delegate?.dataSource(self, didUpdateAt: ip)
-    }
+    return indexPath
   }
 }
