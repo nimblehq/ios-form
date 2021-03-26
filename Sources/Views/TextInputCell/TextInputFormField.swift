@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class TextInputFormField: Valuable {
+final class TextInputFormField: FieldViewModel {
 
   let key: String
   var viewModel: TextInputViewModel

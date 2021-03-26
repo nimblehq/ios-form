@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		6C72D7C744ED357AB9232CB1 /* Pods_iOSForm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48971D14A48A113EE8571F1D /* Pods_iOSForm.framework */; };
 		9024BFEE260C3665009E248D /* FormDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9024BFED260C3665009E248D /* FormDataSource.swift */; };
-		9024BFF3260C370A009E248D /* Valuable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9024BFF2260C370A009E248D /* Valuable.swift */; };
+		9024BFF3260C370A009E248D /* FieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9024BFF2260C370A009E248D /* FieldViewModel.swift */; };
 		9024BFF8260C3D68009E248D /* TextInputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9024BFF7260C3D68009E248D /* TextInputViewModel.swift */; };
 		9024C001260C4EEC009E248D /* TitleFormHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9024C000260C4EEC009E248D /* TitleFormHeader.swift */; };
 		9024C009260C5F8F009E248D /* TitleHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9024C008260C5F8F009E248D /* TitleHeaderFooterView.swift */; };
@@ -59,7 +59,7 @@
 		5596A50C82AC3A741610A96B /* Pods_iOSForm_iOSFormUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSForm_iOSFormUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		883896A0F488B5772846824D /* Pods-iOSForm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSForm.debug.xcconfig"; path = "Target Support Files/Pods-iOSForm/Pods-iOSForm.debug.xcconfig"; sourceTree = "<group>"; };
 		9024BFED260C3665009E248D /* FormDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormDataSource.swift; sourceTree = "<group>"; };
-		9024BFF2260C370A009E248D /* Valuable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Valuable.swift; sourceTree = "<group>"; };
+		9024BFF2260C370A009E248D /* FieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldViewModel.swift; sourceTree = "<group>"; };
 		9024BFF7260C3D68009E248D /* TextInputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputViewModel.swift; sourceTree = "<group>"; };
 		9024C000260C4EEC009E248D /* TitleFormHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleFormHeader.swift; sourceTree = "<group>"; };
 		9024C008260C5F8F009E248D /* TitleHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleHeaderFooterView.swift; sourceTree = "<group>"; };
@@ -269,7 +269,7 @@
 				905C7539260B313B00B308DD /* FormHeader.swift */,
 				905C753E260B321400B308DD /* FormSection.swift */,
 				905C751C260B25E700B308DD /* FormViewController.swift */,
-				9024BFF2260C370A009E248D /* Valuable.swift */,
+				9024BFF2260C370A009E248D /* FieldViewModel.swift */,
 			);
 			path = Form;
 			sourceTree = "<group>";
@@ -555,7 +555,7 @@
 				905C750E260B25C600B308DD /* FormDemoModule.swift in Sources */,
 				905C74A1260B228800B308DD /* SceneDelegate.swift in Sources */,
 				905C7560260B3EFE00B308DD /* TextInputFormField.swift in Sources */,
-				9024BFF3260C370A009E248D /* Valuable.swift in Sources */,
+				9024BFF3260C370A009E248D /* FieldViewModel.swift in Sources */,
 				905C7518260B25DD00B308DD /* FormDemoViewModel.swift in Sources */,
 				905C7558260B3C8D00B308DD /* TextInputCell.swift in Sources */,
 				905C7513260B25D000B308DD /* FormDemoViewController.swift in Sources */,

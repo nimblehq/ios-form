@@ -31,12 +31,12 @@ final class FormDataSource {
     self.sections = sections
   }
 
-  func getViewModel<FormField: Valuable>(from formField: FormField.Type, byKey key: String) -> FormField.ViewModel? {
+  func getViewModel<FormField: FieldViewModel>(from formField: FormField.Type, byKey key: String) -> FormField.ViewModel? {
     let field = fields.first(where: { $0.key == key }) as? FormField
     return field?.viewModel
   }
 
-  func updateViewModel<Field: Valuable>(for formField: Field.Type, with viewModel: Field.ViewModel, byKey key: String) {
+  func updateViewModel<Field: FieldViewModel>(for formField: Field.Type, with viewModel: Field.ViewModel, byKey key: String) {
     var indexPath: IndexPath?
     for (i, section) in sections.enumerated() {
       if let j = section.fields.firstIndex(where: { $0.key == key }) {

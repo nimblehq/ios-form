@@ -1,11 +1,11 @@
 //
-//  Valuable.swift
+//  FieldViewModel.swift
 //  iOSForm
 //
 //  Created by Su Van Ho on 25/03/2021.
 //
 
-protocol Valuable: AnyObject {
+protocol FieldViewModel: AnyObject {
 
   associatedtype ViewModel
 
