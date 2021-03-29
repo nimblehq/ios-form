@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class SelectInputFormField<Value: SelectItem> {
+final class SelectInputFormField<Value: SelectableItem> {
 
     let key: String
     var viewModel: SelectInputViewModel

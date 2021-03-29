@@ -1,16 +1,16 @@
 //
-//  SelectItem.swift
+//  SelectableItem.swift
 //  iOSForm
 //
 //  Created by Su Van Ho on 26/03/2021.
 //
 
-protocol SelectItem: AnyObject, Equatable {
+protocol SelectableItem: AnyObject, Equatable {
 
     var title: String { get set }
 }
 
-extension SelectItem {
+extension SelectableItem {
 
     static func == (lhs: Self, rhs: Self) -> Bool { lhs.title == rhs.title }
 }

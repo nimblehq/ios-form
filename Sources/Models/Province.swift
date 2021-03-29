@@ -5,7 +5,7 @@
 //  Created by Su Van Ho on 26/03/2021.
 //
 
-final class Province: SelectItem {
+final class Province: SelectableItem {
 
     var title: String
 

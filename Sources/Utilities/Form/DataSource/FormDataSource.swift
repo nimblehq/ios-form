@@ -39,7 +39,7 @@ final class FormDataSource {
         field.value = value
         if let field = field as? FormField {
             sections[indexPath.section].fields[indexPath.row] = field
-            reloadField(for: formField, byKey: key)
+            reloadField(by: key)
         }
     }
 
@@ -59,7 +59,7 @@ final class FormDataSource {
         }
     }
 
-    private func reloadField<Field: FieldDataSource>(for formField: Field.Type, byKey key: String) {
+    private func reloadField(by key: String) {
         guard let indexPath = indexPath(of: key) else { return }
         delegate?.dataSource(self, didUpdateAt: indexPath)
     }

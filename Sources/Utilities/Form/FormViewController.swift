@@ -14,7 +14,7 @@ protocol FormViewInput: AnyObject {
 
 class FormViewController: UIViewController {
 
-    let tableView: UITableView = UITableView(frame: .zero, style: .grouped)
+    let tableView = UITableView(frame: .zero, style: .grouped)
 
     let dataSource = FormDataSource()
 

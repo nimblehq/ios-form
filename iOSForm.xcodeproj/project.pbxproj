@@ -39,7 +39,7 @@
 		905C7560260B3EFE00B308DD /* TextInputFormField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905C755F260B3EFE00B308DD /* TextInputFormField.swift */; };
 		90F1F4CF260DEE840066C00D /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F1F4CE260DEE840066C00D /* Country.swift */; };
 		90F1F4D4260DEF0D0066C00D /* Province.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F1F4D3260DEF0D0066C00D /* Province.swift */; };
-		90F1F4D9260DEFDB0066C00D /* SelectItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F1F4D8260DEFDB0066C00D /* SelectItem.swift */; };
+		90F1F4D9260DEFDB0066C00D /* SelectableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F1F4D8260DEFDB0066C00D /* SelectableItem.swift */; };
 		90F1F4DE260DF0340066C00D /* InputDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F1F4DD260DF0340066C00D /* InputDataSource.swift */; };
 		97C1572260CDF9182A29A62E /* Pods_iOSForm_iOSFormUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5596A50C82AC3A741610A96B /* Pods_iOSForm_iOSFormUITests.framework */; };
 		D03727F2D476009748860661 /* Pods_iOSFormTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF066DC8A4D695F527011A01 /* Pods_iOSFormTests.framework */; };
@@ -106,7 +106,7 @@
 		905C755F260B3EFE00B308DD /* TextInputFormField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputFormField.swift; sourceTree = "<group>"; };
 		90F1F4CE260DEE840066C00D /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		90F1F4D3260DEF0D0066C00D /* Province.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Province.swift; sourceTree = "<group>"; };
-		90F1F4D8260DEFDB0066C00D /* SelectItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectItem.swift; sourceTree = "<group>"; };
+		90F1F4D8260DEFDB0066C00D /* SelectableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableItem.swift; sourceTree = "<group>"; };
 		90F1F4DD260DF0340066C00D /* InputDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputDataSource.swift; sourceTree = "<group>"; };
 		DF066DC8A4D695F527011A01 /* Pods_iOSFormTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSFormTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5BA0D96D39CC9CED6661954 /* Pods-iOSForm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSForm.release.xcconfig"; path = "Target Support Files/Pods-iOSForm/Pods-iOSForm.release.xcconfig"; sourceTree = "<group>"; };
@@ -165,7 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				900FF1D3260D9B95001641C2 /* OpenSelectRouterInput.swift */,
-				90F1F4D8260DEFDB0066C00D /* SelectItem.swift */,
+				90F1F4D8260DEFDB0066C00D /* SelectableItem.swift */,
 				900FF1CB260D988A001641C2 /* SelectModule.swift */,
 				900FF1B8260D9752001641C2 /* SelectViewController.swift */,
 				900FF1C6260D987D001641C2 /* SelectViewModel.swift */,
@@ -637,7 +637,7 @@
 				900FF1CC260D988A001641C2 /* SelectModule.swift in Sources */,
 				90F1F4CF260DEE840066C00D /* Country.swift in Sources */,
 				9024C009260C5F8F009E248D /* TitleHeaderFooterView.swift in Sources */,
-				90F1F4D9260DEFDB0066C00D /* SelectItem.swift in Sources */,
+				90F1F4D9260DEFDB0066C00D /* SelectableItem.swift in Sources */,
 				905C749F260B228800B308DD /* AppDelegate.swift in Sources */,
 				9024BFF8260C3D68009E248D /* TextInputViewModel.swift in Sources */,
 				905C750E260B25C600B308DD /* FormDemoModule.swift in Sources */,
