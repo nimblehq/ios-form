@@ -9,62 +9,62 @@ import Foundation
 
 protocol FormDataSourceDelegate: AnyObject {
 
-  func dataSourceDidChangeSections(_ dataSource: FormDataSource)
-  func dataSource(_ dataSource: FormDataSource, didUpdateAt indexPath: IndexPath)
+    func dataSourceDidChangeSections(_ dataSource: FormDataSource)
+    func dataSource(_ dataSource: FormDataSource, didUpdateAt indexPath: IndexPath)
 }
 
 final class FormDataSource {
 
-  private(set) var sections: [FormSection] = [] {
-    didSet {
-      delegate?.dataSourceDidChangeSections(self)
+    private(set) var sections: [FormSection] = [] {
+        didSet {
+            delegate?.dataSourceDidChangeSections(self)
+        }
     }
-  }
 
-  private var fields: [FormField] {
-    Array(sections.compactMap { $0.fields }.joined())
-  }
-
-  weak var delegate: FormDataSourceDelegate?
-
-  func updateSections(_ sections: [FormSection]) {
-    self.sections = sections
-  }
-
-  func updateValue<Field: FieldDataSource>(for formField: Field.Type, with value: Field.Value, byKey key: String) {
-    guard
-      let indexPath = indexPath(of: key),
-      let field = sections[indexPath.section].fields[indexPath.row] as? Field
-    else { return }
-    field.value = value
-    if let field = field as? FormField {
-      sections[indexPath.section].fields[indexPath.row] = field
-      reloadField(for: formField, byKey: key)
+    private var fields: [FormField] {
+        Array(sections.compactMap { $0.fields }.joined())
     }
-  }
 
-  func getValue<Field: FieldDataSource>(of formField: Field.Type, byKey key: String) -> Field.Value? {
-    guard
-      let indexPath = indexPath(of: key),
-      let field = sections[indexPath.section].fields[indexPath.row] as? Field
-    else { return nil }
-    return field.value
-  }
+    weak var delegate: FormDataSourceDelegate?
 
-  private func reloadField<Field: FieldDataSource>(for formField: Field.Type, byKey key: String) {
-    if let indexPath = indexPath(of: key) {
-      delegate?.dataSource(self, didUpdateAt: indexPath)
+    func updateSections(_ sections: [FormSection]) {
+        self.sections = sections
     }
-  }
 
-  private func indexPath(of key: String) -> IndexPath? {
-    var indexPath: IndexPath?
-    for (i, section) in sections.enumerated() {
-      if let j = section.fields.firstIndex(where: { $0.key == key }) {
-        indexPath = IndexPath(row: j, section: i)
-        break
-      }
+    func updateValue<Field: FieldDataSource>(for formField: Field.Type, with value: Field.Value, byKey key: String) {
+        guard
+            let indexPath = indexPath(of: key),
+            let field = sections[indexPath.section].fields[indexPath.row] as? Field
+        else { return }
+        field.value = value
+        if let field = field as? FormField {
+            sections[indexPath.section].fields[indexPath.row] = field
+            reloadField(by: key)
+        }
     }
-    return indexPath
-  }
+
+    func getValue<Field: FieldDataSource>(of formField: Field.Type, byKey key: String) -> Field.Value? {
+        guard
+            let indexPath = indexPath(of: key),
+            let field = sections[indexPath.section].fields[indexPath.row] as? Field
+        else { return nil }
+        return field.value
+    }
+
+    private func reloadField(by key: String) {
+        if let indexPath = indexPath(of: key) {
+            delegate?.dataSource(self, didUpdateAt: indexPath)
+        }
+    }
+
+    private func indexPath(of key: String) -> IndexPath? {
+        var indexPath: IndexPath?
+        for (i, section) in sections.enumerated() {
+            if let j = section.fields.firstIndex(where: { $0.key == key }) {
+                indexPath = IndexPath(row: j, section: i)
+                break
+            }
+        }
+        return indexPath
+    }
 }

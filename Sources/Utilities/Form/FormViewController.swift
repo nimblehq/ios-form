@@ -99,10 +99,6 @@ extension FormViewController: UITableViewDataSource {
 
 extension FormViewController: UITableViewDelegate {
 
-  func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-    return UITableView.automaticDimension
-  }
-
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     let field = dataSource.sections[indexPath.section].fields[indexPath.row]
     return field.height

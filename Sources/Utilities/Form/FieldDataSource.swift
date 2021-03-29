@@ -6,11 +6,11 @@
 //
 
 protocol FieldDataSource: AnyObject {
-
-  associatedtype Value
-  associatedtype ViewModel
-
-  var viewModel: ViewModel { get set }
-  var value: Value { get set }
-
+    
+    associatedtype Value
+    associatedtype ViewModel
+    
+    var viewModel: ViewModel { get set }
+    var value: Value { get set }
+    
 }

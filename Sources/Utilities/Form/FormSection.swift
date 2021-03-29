@@ -7,11 +7,11 @@
 
 final class FormSection {
 
-  var header: FormHeader?
-  var fields: [FormField]
+    var header: FormHeader?
+    var fields: [FormField]
 
-  init(header: FormHeader? = nil, fields: [FormField]) {
-    self.header = header
-    self.fields = fields
-  }
+    init(header: FormHeader? = nil, fields: [FormField]) {
+        self.header = header
+        self.fields = fields
+    }
 }
