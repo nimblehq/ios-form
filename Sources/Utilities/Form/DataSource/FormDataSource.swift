@@ -66,9 +66,9 @@ final class FormDataSource {
 
     private func indexPath(of key: String) -> IndexPath? {
         var indexPath: IndexPath?
-        for (i, section) in sections.enumerated() {
-            if let j = section.fields.firstIndex(where: { $0.key == key }) {
-                indexPath = IndexPath(row: j, section: i)
+        for (index, section) in sections.enumerated() {
+            if let firstIndex = section.fields.firstIndex(where: { $0.key == key }) {
+                indexPath = IndexPath(row: firstIndex, section: index)
                 break
             }
         }

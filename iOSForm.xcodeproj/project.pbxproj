@@ -24,8 +24,8 @@
 		905C74A1260B228800B308DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905C74A0260B228800B308DD /* SceneDelegate.swift */; };
 		905C74A8260B228A00B308DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 905C74A7260B228A00B308DD /* Assets.xcassets */; };
 		905C74AB260B228A00B308DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 905C74A9260B228A00B308DD /* LaunchScreen.storyboard */; };
-		905C74B6260B228A00B308DD /* iOSFormTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905C74B5260B228A00B308DD /* iOSFormTests.swift */; };
-		905C74C1260B228A00B308DD /* iOSFormUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905C74C0260B228A00B308DD /* iOSFormUITests.swift */; };
+		905C74B6260B228A00B308DD /* IOSFormTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905C74B5260B228A00B308DD /* IOSFormTests.swift */; };
+		905C74C1260B228A00B308DD /* IOSFormUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905C74C0260B228A00B308DD /* IOSFormUITests.swift */; };
 		905C74D5260B235200B308DD /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 905C74D4260B235200B308DD /* README.md */; };
 		905C750E260B25C600B308DD /* FormDemoModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905C750D260B25C600B308DD /* FormDemoModule.swift */; };
 		905C7513260B25D000B308DD /* FormDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905C7512260B25D000B308DD /* FormDemoViewController.swift */; };
@@ -88,10 +88,10 @@
 		905C74AA260B228A00B308DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		905C74AC260B228A00B308DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		905C74B1260B228A00B308DD /* iOSFormTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSFormTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		905C74B5260B228A00B308DD /* iOSFormTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSFormTests.swift; sourceTree = "<group>"; };
+		905C74B5260B228A00B308DD /* IOSFormTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSFormTests.swift; sourceTree = "<group>"; };
 		905C74B7260B228A00B308DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		905C74BC260B228A00B308DD /* iOSFormUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSFormUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		905C74C0260B228A00B308DD /* iOSFormUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSFormUITests.swift; sourceTree = "<group>"; };
+		905C74C0260B228A00B308DD /* IOSFormUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSFormUITests.swift; sourceTree = "<group>"; };
 		905C74C2260B228A00B308DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		905C74D4260B235200B308DD /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		905C750D260B25C600B308DD /* FormDemoModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormDemoModule.swift; sourceTree = "<group>"; };
@@ -207,7 +207,7 @@
 		905C74B4260B228A00B308DD /* UnitTests */ = {
 			isa = PBXGroup;
 			children = (
-				905C74B5260B228A00B308DD /* iOSFormTests.swift */,
+				905C74B5260B228A00B308DD /* IOSFormTests.swift */,
 				905C74B7260B228A00B308DD /* Info.plist */,
 			);
 			path = UnitTests;
@@ -216,7 +216,7 @@
 		905C74BF260B228A00B308DD /* UITests */ = {
 			isa = PBXGroup;
 			children = (
-				905C74C0260B228A00B308DD /* iOSFormUITests.swift */,
+				905C74C0260B228A00B308DD /* IOSFormUITests.swift */,
 				905C74C2260B228A00B308DD /* Info.plist */,
 			);
 			path = UITests;
@@ -379,6 +379,7 @@
 			buildConfigurationList = 905C74C5260B228A00B308DD /* Build configuration list for PBXNativeTarget "iOSForm" */;
 			buildPhases = (
 				342C04739F4A07AEE86B4B26 /* [CP] Check Pods Manifest.lock */,
+				900E4FBB2611A17D0021F8F9 /* ShellScript */,
 				905C7497260B228800B308DD /* Sources */,
 				905C7498260B228800B308DD /* Frameworks */,
 				905C7499260B228800B308DD /* Resources */,
@@ -541,6 +542,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iOSForm/Pods-iOSForm-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		900E4FBB2611A17D0021F8F9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
 		9AF03ACB770264271A6DA5A3 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -644,7 +662,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				905C74B6260B228A00B308DD /* iOSFormTests.swift in Sources */,
+				905C74B6260B228A00B308DD /* IOSFormTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -652,7 +670,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				905C74C1260B228A00B308DD /* iOSFormUITests.swift in Sources */,
+				905C74C1260B228A00B308DD /* IOSFormUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

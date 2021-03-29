@@ -12,8 +12,11 @@ final class Country: SelectItem {
     init(title: String) {
         self.title = title
     }
+}
+
+extension Country {
 
     static let list: [Country] = {
-        return [.init(title: "Vietnam"), .init(title: "Thailand")]
+        [.init(title: "Vietnam"), .init(title: "Thailand")]
     }()
 }

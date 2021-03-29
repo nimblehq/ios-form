@@ -4,6 +4,7 @@
 //
 //  Created by Su Van Ho on 26/03/2021.
 //
+//
 
 import UIKit
 
@@ -38,6 +39,7 @@ extension SelectInputFormField: FormField {
     }
 
     func dequeue(for tableView: UITableView, at indexPath: IndexPath) -> UITableViewCell {
+        // swiftlint:disable:next force_cast
         let cell = tableView.dequeueReusableCell(withIdentifier: "SelectInputCell", for: indexPath) as! SelectInputCell
         cell.configure(viewModel)
         self.cell = cell
@@ -82,11 +84,11 @@ extension SelectInputFormField: InputDataSource {}
 extension SelectInputFormField: SelectModuleOutput {
 
     var title: String {
-        return "Select Item"
+        "Select Item"
     }
 
     var list: [String] {
-        return dataSource.map { $0.title }
+        dataSource.map { $0.title }
     }
 
     func didSelectItem(at index: Int) {

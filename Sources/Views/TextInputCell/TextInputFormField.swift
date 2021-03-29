@@ -31,6 +31,7 @@ extension TextInputFormField: FormField {
     }
 
     func dequeue(for tableView: UITableView, at indexPath: IndexPath) -> UITableViewCell {
+        // swiftlint:disable:next force_cast
         let cell = tableView.dequeueReusableCell(withIdentifier: "TextInputCell", for: indexPath) as! TextInputCell
         cell.delegate = self
         cell.configure(viewModel)
@@ -44,7 +45,7 @@ extension TextInputFormField: FieldDataSource {
 
     var value: String? {
         get {
-            return viewModel.value
+            viewModel.value
         }
         set {
             viewModel.value = newValue

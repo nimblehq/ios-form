@@ -12,12 +12,15 @@ final class Province: SelectItem {
     init(title: String) {
         self.title = title
     }
+}
+
+extension Province {
 
     static let vietProvinces: [Province] = {
-        return [.init(title: "Hanoi"), .init(title: "Hanoi 1")]
+        [.init(title: "Hanoi"), .init(title: "Hanoi 1")]
     }()
 
     static let thaiProvinces: [Province] = {
-        return [.init(title: "Bangkok"), .init(title: "Bangkok 1")]
+        [.init(title: "Bangkok"), .init(title: "Bangkok 1")]
     }()
 }

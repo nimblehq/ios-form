@@ -38,11 +38,14 @@ extension FormDemoViewModel: FormDemoViewOutput {
                     ),
                     SelectInputFormField<Country>(
                         key: FormKey.country(),
-                        viewModel: .init(title: "Country"), dataSource: Country.list, router: router
+                        viewModel: .init(title: "Country"),
+                        dataSource: Country.list,
+                        router: router
                     ),
                     SelectInputFormField<Province>(
                         key: FormKey.province(),
-                        viewModel: .init(title: "Province"), router: router
+                        viewModel: .init(title: "Province"),
+                        router: router
                     )
                 ]
             )
@@ -54,7 +57,12 @@ extension FormDemoViewModel: FormDemoViewOutput {
     }
 
     func didTapSaveButton() {
-        view?.dataSource.updateValue(for: SelectInputFormField<Country>.self, with: Country(title: "Vietnam"), byKey: FormKey.country())
+        view?.dataSource
+            .updateValue(
+                for: SelectInputFormField<Country>.self,
+                with: Country(title: "Vietnam"),
+                byKey: FormKey.country()
+            )
     }
 }
 
@@ -68,11 +76,23 @@ extension FormDemoViewModel: FormFieldDelegate {
                 let country = value
             else { return }
             if country.title == "Thailand" {
-                view?.dataSource.updateDataSource(for: SelectInputFormField<Province>.self, with: Province.thaiProvinces, byKey: FormKey.province())
+                view?.dataSource.updateDataSource(
+                    for: SelectInputFormField<Province>.self,
+                    with: Province.thaiProvinces,
+                    byKey: FormKey.province()
+                )
             } else {
-                view?.dataSource.updateDataSource(for: SelectInputFormField<Province>.self, with: Province.vietProvinces, byKey: FormKey.province())
+                view?.dataSource.updateDataSource(
+                    for: SelectInputFormField<Province>.self,
+                    with: Province.vietProvinces,
+                    byKey: FormKey.province()
+                )
             }
-            view?.dataSource.updateValue(for: SelectInputFormField<Province>.self, with: nil, byKey: FormKey.province())
+            view?.dataSource.updateValue(
+                for: SelectInputFormField<Province>.self,
+                with: nil,
+                byKey: FormKey.province()
+            )
         default: break
         }
     }
