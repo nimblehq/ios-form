@@ -13,7 +13,7 @@ protocol FormDemoRouterInput: AnyObject {
 }
 
 final class FormDemoRouter {
-    
+
     weak var view: FormDemoViewInput?
 
     private var viewController: UIViewController? {
@@ -22,6 +22,7 @@ final class FormDemoRouter {
 }
 
 // MARK: - FormDemoRouterInput
+
 extension FormDemoRouter: FormDemoRouterInput {
 
     func show(on window: UIWindow) {

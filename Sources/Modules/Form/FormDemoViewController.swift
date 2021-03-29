@@ -35,7 +35,7 @@ final class FormDemoViewController: FormViewController {
 extension FormDemoViewController {
 
     private func setUpLayout() {}
-    
+
     private func setUpViews() {
         navigationItem.title = "Form Demo"
         view.backgroundColor = .white
