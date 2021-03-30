@@ -12,5 +12,4 @@ protocol FieldDataSource: AnyObject {
 
     var viewModel: ViewModel { get set }
     var value: Value { get set }
-
 }
