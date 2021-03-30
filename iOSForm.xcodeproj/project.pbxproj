@@ -37,6 +37,9 @@
 		905C753F260B321400B308DD /* FormSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905C753E260B321400B308DD /* FormSection.swift */; };
 		905C7558260B3C8D00B308DD /* TextInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905C7557260B3C8D00B308DD /* TextInputCell.swift */; };
 		905C7560260B3EFE00B308DD /* TextInputFormField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905C755F260B3EFE00B308DD /* TextInputFormField.swift */; };
+		9084086E2612D0E400E3F07B /* ToggleInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9084086D2612D0E400E3F07B /* ToggleInputCell.swift */; };
+		9084087B2612D16E00E3F07B /* ToggleInputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9084087A2612D16E00E3F07B /* ToggleInputViewModel.swift */; };
+		908408802612D1A500E3F07B /* ToggleInputFormField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9084087F2612D1A500E3F07B /* ToggleInputFormField.swift */; };
 		90F1F4CF260DEE840066C00D /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F1F4CE260DEE840066C00D /* Country.swift */; };
 		90F1F4D4260DEF0D0066C00D /* Province.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F1F4D3260DEF0D0066C00D /* Province.swift */; };
 		90F1F4D9260DEFDB0066C00D /* SelectableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F1F4D8260DEFDB0066C00D /* SelectableItem.swift */; };
@@ -104,6 +107,9 @@
 		905C753E260B321400B308DD /* FormSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormSection.swift; sourceTree = "<group>"; };
 		905C7557260B3C8D00B308DD /* TextInputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputCell.swift; sourceTree = "<group>"; };
 		905C755F260B3EFE00B308DD /* TextInputFormField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputFormField.swift; sourceTree = "<group>"; };
+		9084086D2612D0E400E3F07B /* ToggleInputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleInputCell.swift; sourceTree = "<group>"; };
+		9084087A2612D16E00E3F07B /* ToggleInputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleInputViewModel.swift; sourceTree = "<group>"; };
+		9084087F2612D1A500E3F07B /* ToggleInputFormField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleInputFormField.swift; sourceTree = "<group>"; };
 		90F1F4CE260DEE840066C00D /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		90F1F4D3260DEF0D0066C00D /* Province.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Province.swift; sourceTree = "<group>"; };
 		90F1F4D8260DEFDB0066C00D /* SelectableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableItem.swift; sourceTree = "<group>"; };
@@ -332,11 +338,22 @@
 		905C7556260B3B1900B308DD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9084086C2612D0CB00E3F07B /* ToggleInputCell */,
 				900FF1A4260D91DE001641C2 /* SelectInputCell */,
 				9024BFFF260C4EDC009E248D /* Header */,
 				905C7549260B339800B308DD /* TextInputCell */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		9084086C2612D0CB00E3F07B /* ToggleInputCell */ = {
+			isa = PBXGroup;
+			children = (
+				9084086D2612D0E400E3F07B /* ToggleInputCell.swift */,
+				9084087A2612D16E00E3F07B /* ToggleInputViewModel.swift */,
+				9084087F2612D1A500E3F07B /* ToggleInputFormField.swift */,
+			);
+			path = ToggleInputCell;
 			sourceTree = "<group>";
 		};
 		90F1F4CD260DEE780066C00D /* Models */ = {
@@ -636,6 +653,7 @@
 				905C7535260B2ED900B308DD /* FormField.swift in Sources */,
 				900FF1CC260D988A001641C2 /* SelectModule.swift in Sources */,
 				90F1F4CF260DEE840066C00D /* Country.swift in Sources */,
+				9084087B2612D16E00E3F07B /* ToggleInputViewModel.swift in Sources */,
 				9024C009260C5F8F009E248D /* TitleHeaderFooterView.swift in Sources */,
 				90F1F4D9260DEFDB0066C00D /* SelectableItem.swift in Sources */,
 				905C749F260B228800B308DD /* AppDelegate.swift in Sources */,
@@ -651,9 +669,11 @@
 				905C7558260B3C8D00B308DD /* TextInputCell.swift in Sources */,
 				90F1F4D4260DEF0D0066C00D /* Province.swift in Sources */,
 				90F1F4DE260DF0340066C00D /* InputDataSource.swift in Sources */,
+				908408802612D1A500E3F07B /* ToggleInputFormField.swift in Sources */,
 				905C7513260B25D000B308DD /* FormDemoViewController.swift in Sources */,
 				9024BFEE260C3665009E248D /* FormDataSource.swift in Sources */,
 				9024C001260C4EEC009E248D /* TitleFormHeader.swift in Sources */,
+				9084086E2612D0E400E3F07B /* ToggleInputCell.swift in Sources */,
 				900FF1AB260D92D0001641C2 /* SelectInputViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -27,7 +27,8 @@ extension FormDemoViewModel: FormDemoViewOutput {
                 header: TitleFormHeader(key: "Profile", viewModel: .init(title: "PROFILE")),
                 fields: [
                     TextInputFormField(key: FormKey.username(), viewModel: .init(title: "Username")),
-                    TextInputFormField(key: FormKey.password(), viewModel: .init(title: "Password", isSecure: true))
+                    TextInputFormField(key: FormKey.password(), viewModel: .init(title: "Password", isSecure: true)),
+                    ToggleInputFormField(key: FormKey.remember(), viewModel: .init(title: "Remember me"))
                 ]
             ),
             .init(
@@ -57,12 +58,7 @@ extension FormDemoViewModel: FormDemoViewOutput {
     }
 
     func didTapSaveButton() {
-        view?.dataSource
-            .updateValue(
-                for: SelectInputFormField<Country>.self,
-                with: Country(title: "Vietnam"),
-                byKey: FormKey.country()
-            )
+        print("didTapSaveButton")
     }
 }
 
@@ -105,6 +101,7 @@ extension FormDemoViewModel {
 
         case username
         case password
+        case remember
         case fullName
         case country
         case province
