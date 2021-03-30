@@ -3,10 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C72D7C744ED357AB9232CB1 /* Pods_iOSForm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48971D14A48A113EE8571F1D /* Pods_iOSForm.framework */; };
+		9024BFEE260C3665009E248D /* FormDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9024BFED260C3665009E248D /* FormDataSource.swift */; };
+		9024BFF3260C370A009E248D /* FieldDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9024BFF2260C370A009E248D /* FieldDataSource.swift */; };
+		9024BFF8260C3D68009E248D /* TextInputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9024BFF7260C3D68009E248D /* TextInputViewModel.swift */; };
+		9024C001260C4EEC009E248D /* TitleFormHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9024C000260C4EEC009E248D /* TitleFormHeader.swift */; };
+		9024C009260C5F8F009E248D /* TitleHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9024C008260C5F8F009E248D /* TitleHeaderFooterView.swift */; };
 		905C749F260B228800B308DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905C749E260B228800B308DD /* AppDelegate.swift */; };
 		905C74A1260B228800B308DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905C74A0260B228800B308DD /* SceneDelegate.swift */; };
 		905C74A8260B228A00B308DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 905C74A7260B228A00B308DD /* Assets.xcassets */; };
@@ -19,6 +25,13 @@
 		905C7518260B25DD00B308DD /* FormDemoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905C7517260B25DD00B308DD /* FormDemoViewModel.swift */; };
 		905C751D260B25E700B308DD /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905C751C260B25E700B308DD /* FormViewController.swift */; };
 		905C7525260B264A00B308DD /* FormDemoRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905C7524260B264A00B308DD /* FormDemoRouter.swift */; };
+		905C7535260B2ED900B308DD /* FormField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905C7534260B2ED900B308DD /* FormField.swift */; };
+		905C753A260B313B00B308DD /* FormHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905C7539260B313B00B308DD /* FormHeader.swift */; };
+		905C753F260B321400B308DD /* FormSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905C753E260B321400B308DD /* FormSection.swift */; };
+		905C7558260B3C8D00B308DD /* TextInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905C7557260B3C8D00B308DD /* TextInputCell.swift */; };
+		905C7560260B3EFE00B308DD /* TextInputFormField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905C755F260B3EFE00B308DD /* TextInputFormField.swift */; };
+		97C1572260CDF9182A29A62E /* Pods_iOSForm_iOSFormUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5596A50C82AC3A741610A96B /* Pods_iOSForm_iOSFormUITests.framework */; };
+		D03727F2D476009748860661 /* Pods_iOSFormTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF066DC8A4D695F527011A01 /* Pods_iOSFormTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +52,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		09B07A9792DB63033214C475 /* Pods-iOSForm-iOSFormUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSForm-iOSFormUITests.debug.xcconfig"; path = "Target Support Files/Pods-iOSForm-iOSFormUITests/Pods-iOSForm-iOSFormUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		10FCD83EBF31774B24AD9EE6 /* Pods-iOSFormTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSFormTests.debug.xcconfig"; path = "Target Support Files/Pods-iOSFormTests/Pods-iOSFormTests.debug.xcconfig"; sourceTree = "<group>"; };
+		2D824967BF1C8BA8FDB136F4 /* Pods-iOSFormTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSFormTests.release.xcconfig"; path = "Target Support Files/Pods-iOSFormTests/Pods-iOSFormTests.release.xcconfig"; sourceTree = "<group>"; };
+		48971D14A48A113EE8571F1D /* Pods_iOSForm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSForm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5596A50C82AC3A741610A96B /* Pods_iOSForm_iOSFormUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSForm_iOSFormUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		883896A0F488B5772846824D /* Pods-iOSForm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSForm.debug.xcconfig"; path = "Target Support Files/Pods-iOSForm/Pods-iOSForm.debug.xcconfig"; sourceTree = "<group>"; };
+		9024BFED260C3665009E248D /* FormDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormDataSource.swift; sourceTree = "<group>"; };
+		9024BFF2260C370A009E248D /* FieldDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldDataSource.swift; sourceTree = "<group>"; };
+		9024BFF7260C3D68009E248D /* TextInputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputViewModel.swift; sourceTree = "<group>"; };
+		9024C000260C4EEC009E248D /* TitleFormHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleFormHeader.swift; sourceTree = "<group>"; };
+		9024C008260C5F8F009E248D /* TitleHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleHeaderFooterView.swift; sourceTree = "<group>"; };
 		905C749B260B228800B308DD /* iOSForm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSForm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		905C749E260B228800B308DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		905C74A0260B228800B308DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +81,14 @@
 		905C7517260B25DD00B308DD /* FormDemoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormDemoViewModel.swift; sourceTree = "<group>"; };
 		905C751C260B25E700B308DD /* FormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
 		905C7524260B264A00B308DD /* FormDemoRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormDemoRouter.swift; sourceTree = "<group>"; };
+		905C7534260B2ED900B308DD /* FormField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormField.swift; sourceTree = "<group>"; };
+		905C7539260B313B00B308DD /* FormHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormHeader.swift; sourceTree = "<group>"; };
+		905C753E260B321400B308DD /* FormSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormSection.swift; sourceTree = "<group>"; };
+		905C7557260B3C8D00B308DD /* TextInputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputCell.swift; sourceTree = "<group>"; };
+		905C755F260B3EFE00B308DD /* TextInputFormField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputFormField.swift; sourceTree = "<group>"; };
+		DF066DC8A4D695F527011A01 /* Pods_iOSFormTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSFormTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5BA0D96D39CC9CED6661954 /* Pods-iOSForm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSForm.release.xcconfig"; path = "Target Support Files/Pods-iOSForm/Pods-iOSForm.release.xcconfig"; sourceTree = "<group>"; };
+		EB2789438275ACC1FD8420DC /* Pods-iOSForm-iOSFormUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSForm-iOSFormUITests.release.xcconfig"; path = "Target Support Files/Pods-iOSForm-iOSFormUITests/Pods-iOSForm-iOSFormUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C72D7C744ED357AB9232CB1 /* Pods_iOSForm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D03727F2D476009748860661 /* Pods_iOSFormTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,12 +112,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97C1572260CDF9182A29A62E /* Pods_iOSForm_iOSFormUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3DB73E17BD89EA55BBCE5D3F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				48971D14A48A113EE8571F1D /* Pods_iOSForm.framework */,
+				5596A50C82AC3A741610A96B /* Pods_iOSForm_iOSFormUITests.framework */,
+				DF066DC8A4D695F527011A01 /* Pods_iOSFormTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9024BFFF260C4EDC009E248D /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				9024C000260C4EEC009E248D /* TitleFormHeader.swift */,
+				9024C008260C5F8F009E248D /* TitleHeaderFooterView.swift */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
 		905C7492260B228800B308DD = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +145,8 @@
 				905C74DC260B236700B308DD /* Sources */,
 				905C74DD260B237200B308DD /* Tests */,
 				905C749C260B228800B308DD /* Products */,
+				C39FECA1B7E17F4753B6DA9A /* Pods */,
+				3DB73E17BD89EA55BBCE5D3F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,6 +184,7 @@
 				905C74FF260B24F100B308DD /* Application */,
 				905C7506260B256700B308DD /* Modules */,
 				905C7507260B256E00B308DD /* Utilities */,
+				905C7556260B3B1900B308DD /* Views */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -207,9 +264,46 @@
 		905C750C260B25A500B308DD /* Form */ = {
 			isa = PBXGroup;
 			children = (
+				9024BFF2260C370A009E248D /* FieldDataSource.swift */,
+				9024BFED260C3665009E248D /* FormDataSource.swift */,
+				905C7534260B2ED900B308DD /* FormField.swift */,
+				905C7539260B313B00B308DD /* FormHeader.swift */,
+				905C753E260B321400B308DD /* FormSection.swift */,
 				905C751C260B25E700B308DD /* FormViewController.swift */,
 			);
 			path = Form;
+			sourceTree = "<group>";
+		};
+		905C7549260B339800B308DD /* TextInputCell */ = {
+			isa = PBXGroup;
+			children = (
+				905C7557260B3C8D00B308DD /* TextInputCell.swift */,
+				905C755F260B3EFE00B308DD /* TextInputFormField.swift */,
+				9024BFF7260C3D68009E248D /* TextInputViewModel.swift */,
+			);
+			path = TextInputCell;
+			sourceTree = "<group>";
+		};
+		905C7556260B3B1900B308DD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9024BFFF260C4EDC009E248D /* Header */,
+				905C7549260B339800B308DD /* TextInputCell */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C39FECA1B7E17F4753B6DA9A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				883896A0F488B5772846824D /* Pods-iOSForm.debug.xcconfig */,
+				E5BA0D96D39CC9CED6661954 /* Pods-iOSForm.release.xcconfig */,
+				09B07A9792DB63033214C475 /* Pods-iOSForm-iOSFormUITests.debug.xcconfig */,
+				EB2789438275ACC1FD8420DC /* Pods-iOSForm-iOSFormUITests.release.xcconfig */,
+				10FCD83EBF31774B24AD9EE6 /* Pods-iOSFormTests.debug.xcconfig */,
+				2D824967BF1C8BA8FDB136F4 /* Pods-iOSFormTests.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,9 +313,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 905C74C5260B228A00B308DD /* Build configuration list for PBXNativeTarget "iOSForm" */;
 			buildPhases = (
+				342C04739F4A07AEE86B4B26 /* [CP] Check Pods Manifest.lock */,
 				905C7497260B228800B308DD /* Sources */,
 				905C7498260B228800B308DD /* Frameworks */,
 				905C7499260B228800B308DD /* Resources */,
+				4E6BE1B07161955F11B75051 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -236,6 +332,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 905C74C8260B228A00B308DD /* Build configuration list for PBXNativeTarget "iOSFormTests" */;
 			buildPhases = (
+				CC809A9985835332042E5A24 /* [CP] Check Pods Manifest.lock */,
 				905C74AD260B228A00B308DD /* Sources */,
 				905C74AE260B228A00B308DD /* Frameworks */,
 				905C74AF260B228A00B308DD /* Resources */,
@@ -254,9 +351,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 905C74CB260B228A00B308DD /* Build configuration list for PBXNativeTarget "iOSFormUITests" */;
 			buildPhases = (
+				CAA8DFB32748F6D74D437930 /* [CP] Check Pods Manifest.lock */,
 				905C74B8260B228A00B308DD /* Sources */,
 				905C74B9260B228A00B308DD /* Frameworks */,
 				905C74BA260B228A00B308DD /* Resources */,
+				9AF03ACB770264271A6DA5A3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -337,18 +436,131 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		342C04739F4A07AEE86B4B26 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iOSForm-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4E6BE1B07161955F11B75051 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iOSForm/Pods-iOSForm-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iOSForm/Pods-iOSForm-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iOSForm/Pods-iOSForm-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9AF03ACB770264271A6DA5A3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iOSForm-iOSFormUITests/Pods-iOSForm-iOSFormUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iOSForm-iOSFormUITests/Pods-iOSForm-iOSFormUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iOSForm-iOSFormUITests/Pods-iOSForm-iOSFormUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CAA8DFB32748F6D74D437930 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iOSForm-iOSFormUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CC809A9985835332042E5A24 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iOSFormTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		905C7497260B228800B308DD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				905C753A260B313B00B308DD /* FormHeader.swift in Sources */,
+				905C753F260B321400B308DD /* FormSection.swift in Sources */,
 				905C751D260B25E700B308DD /* FormViewController.swift in Sources */,
 				905C7525260B264A00B308DD /* FormDemoRouter.swift in Sources */,
+				905C7535260B2ED900B308DD /* FormField.swift in Sources */,
+				9024C009260C5F8F009E248D /* TitleHeaderFooterView.swift in Sources */,
 				905C749F260B228800B308DD /* AppDelegate.swift in Sources */,
+				9024BFF8260C3D68009E248D /* TextInputViewModel.swift in Sources */,
 				905C750E260B25C600B308DD /* FormDemoModule.swift in Sources */,
 				905C74A1260B228800B308DD /* SceneDelegate.swift in Sources */,
+				905C7560260B3EFE00B308DD /* TextInputFormField.swift in Sources */,
+				9024BFF3260C370A009E248D /* FieldDataSource.swift in Sources */,
 				905C7518260B25DD00B308DD /* FormDemoViewModel.swift in Sources */,
+				905C7558260B3C8D00B308DD /* TextInputCell.swift in Sources */,
 				905C7513260B25D000B308DD /* FormDemoViewController.swift in Sources */,
+				9024BFEE260C3665009E248D /* FormDataSource.swift in Sources */,
+				9024C001260C4EEC009E248D /* TitleFormHeader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,6 +725,7 @@
 		};
 		905C74C6260B228A00B308DD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 883896A0F488B5772846824D /* Pods-iOSForm.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -531,6 +744,7 @@
 		};
 		905C74C7260B228A00B308DD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E5BA0D96D39CC9CED6661954 /* Pods-iOSForm.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -549,6 +763,7 @@
 		};
 		905C74C9260B228A00B308DD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 10FCD83EBF31774B24AD9EE6 /* Pods-iOSFormTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -570,6 +785,7 @@
 		};
 		905C74CA260B228A00B308DD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D824967BF1C8BA8FDB136F4 /* Pods-iOSFormTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -591,6 +807,7 @@
 		};
 		905C74CC260B228A00B308DD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 09B07A9792DB63033214C475 /* Pods-iOSForm-iOSFormUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -610,6 +827,7 @@
 		};
 		905C74CD260B228A00B308DD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB2789438275ACC1FD8420DC /* Pods-iOSForm-iOSFormUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
