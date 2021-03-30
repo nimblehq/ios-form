@@ -58,33 +58,49 @@ extension FormDemoViewModel: FormDemoViewOutput {
     }
 
     func didTapSaveButton() {
-        print("didTapSaveButton")
+        guard let view = view else { return }
+        var message = ""
+        let username = view.dataSource.getValue(of: TextInputFormField.self, byKey: FormKey.username())
+        message += "username: \(username)\n"
+        let password = view.dataSource.getValue(of: TextInputFormField.self, byKey: FormKey.password())
+        message += "password: \(password)\n"
+        let rememberMe = view.dataSource.getValue(of: ToggleInputFormField.self, byKey: FormKey.remember())
+        message += "rememberMe: \(rememberMe)\n"
+        let fullName = view.dataSource.getValue(of: TextInputFormField.self, byKey: FormKey.fullName())
+        message += "fullName: \(fullName)\n"
+        if let country = view.dataSource.getValue(of: SelectInputFormField<Country>.self, byKey: FormKey.country()) {
+            message += "country: \(country.title)\n"
+        }
+        if let province = view.dataSource.getValue(of: SelectInputFormField<Province>.self, byKey: FormKey.province()) {
+            message += "province: \(province.title)\n"
+        }
+        router.presentAlert(with: message)
     }
 }
 
 extension FormDemoViewModel: FormFieldDelegate {
 
     func fieldDidChangeValue(_ field: FormField) {
+        guard let view = view else { return }
         switch field.key {
         case FormKey.country.rawValue:
             guard
-                let value = view?.dataSource.getValue(of: SelectInputFormField<Country>.self, byKey: FormKey.country()),
-                let country = value
+                let country = view.dataSource.getValue(of: SelectInputFormField<Country>.self, byKey: FormKey.country())
             else { return }
             if country.title == "Thailand" {
-                view?.dataSource.updateDataSource(
+                view.dataSource.updateDataSource(
                     for: SelectInputFormField<Province>.self,
                     with: Province.thaiProvinces,
                     byKey: FormKey.province()
                 )
             } else {
-                view?.dataSource.updateDataSource(
+                view.dataSource.updateDataSource(
                     for: SelectInputFormField<Province>.self,
                     with: Province.vietProvinces,
                     byKey: FormKey.province()
                 )
             }
-            view?.dataSource.updateValue(
+            view.dataSource.updateValue(
                 for: SelectInputFormField<Province>.self,
                 with: nil,
                 byKey: FormKey.province()

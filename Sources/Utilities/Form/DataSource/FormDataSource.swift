@@ -43,9 +43,11 @@ final class FormDataSource {
         }
     }
 
-    func getValue<Field: FieldDataSource>(of formField: Field.Type, byKey key: String) -> Field.Value? {
-        let field = fields.first(where: { $0.key == key }) as? Field
-        return field?.value
+    func getValue<Field: FieldDataSource>(of formField: Field.Type, byKey key: String) -> Field.Value {
+        guard let field = fields.first(where: { $0.key == key }) as? Field else {
+            fatalError("\(formField) not found with key: \(key)")
+        }
+        return field.value
     }
 
     func updateDataSource<Field: InputDataSource>(for formField: Field.Type, with dataSource: [Field.Item], byKey key: String) {
