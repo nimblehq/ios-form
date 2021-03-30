@@ -27,7 +27,9 @@ extension TitleFormHeader: FormHeader {
     }
 
     func dequeue(for tableView: UITableView, in section: Int) -> UIView? {
-        let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "TitleHeaderFooterView") as? TitleHeaderFooterView
+        let view = tableView.dequeueReusableHeaderFooterView(
+            withIdentifier: "TitleHeaderFooterView"
+        ) as? TitleHeaderFooterView
         view?.configure(with: viewModel)
         return view
     }

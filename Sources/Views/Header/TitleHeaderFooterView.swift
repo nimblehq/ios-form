@@ -42,7 +42,6 @@ extension TitleHeaderFooterView {
             $0.bottom.equalToSuperview().inset(8.0)
         }
 
-        backgroundColor = .gray
         titleLabel.textColor = .systemGray
         titleLabel.font = UIFont.systemFont(ofSize: 12.0)
     }

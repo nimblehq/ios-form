@@ -7,11 +7,16 @@
 
 import UIKit
 
+protocol FormFieldDelegate: AnyObject {
+
+    func fieldDidChangeValue(_ field: FormField)
+}
+
 protocol FormField: AnyObject {
 
     var key: String { get }
-
     var height: CGFloat { get }
+    var delegate: FormFieldDelegate? { get set }
 
     func register(for tableView: UITableView)
     func dequeue(for tableView: UITableView, at indexPath: IndexPath) -> UITableViewCell
