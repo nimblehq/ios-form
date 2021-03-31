@@ -60,6 +60,9 @@ extension FormViewController: FormDataSourceDelegate {
                 field.register(for: tableView)
             }
         }
+    }
+
+    func dataSourceDidReloadTableView(_ dataSource: FormDataSource) {
         tableView.reloadData()
     }
 
@@ -73,6 +76,16 @@ extension FormViewController: FormDataSourceDelegate {
 
     func dataSource(_ dataSource: FormDataSource, didRemoveAt indexPaths: [IndexPath]) {
         tableView.deleteRows(at: indexPaths, with: .automatic)
+    }
+
+    func dataSource(_ dataSource: FormDataSource, didInsertSectionAt sections: IndexSet) {
+        tableView.performBatchUpdates {
+            tableView.insertSections(sections, with: .automatic)
+        }
+    }
+
+    func dataSource(_ dataSource: FormDataSource, didRemoveSectionAt sections: IndexSet) {
+        tableView.deleteSections(sections, with: .automatic)
     }
 }
 

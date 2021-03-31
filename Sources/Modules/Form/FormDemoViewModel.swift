@@ -27,6 +27,10 @@ extension FormDemoViewModel: FormDemoViewOutput {
                 key: FormSectionKey.profile(),
                 header: TitleFormHeader(key: "Profile", viewModel: .init(title: "PROFILE")),
                 fields: [
+                    TextInputFormField(
+                        key: FormFieldKey.fullName(),
+                        viewModel: .init(title: "Full Name", value: "Admin")
+                    ),
                     TextInputFormField(key: FormFieldKey.username(), viewModel: .init(title: "Username")),
                     TextInputFormField(
                         key: FormFieldKey.password(),
@@ -36,23 +40,9 @@ extension FormDemoViewModel: FormDemoViewOutput {
                 ]
             ),
             .init(
-                key: FormSectionKey.detail(),
+                key: FormSectionKey.enabledAddress(),
                 fields: [
-                    TextInputFormField(
-                        key: FormFieldKey.fullName(),
-                        viewModel: .init(title: "Full Name", value: "Admin")
-                    ),
-                    SelectInputFormField<Country>(
-                        key: FormFieldKey.country(),
-                        viewModel: .init(title: "Country"),
-                        dataSource: Country.list,
-                        router: router
-                    ),
-                    SelectInputFormField<Province>(
-                        key: FormFieldKey.province(),
-                        viewModel: .init(title: "Province"),
-                        router: router
-                    )
+                    ToggleInputFormField(key: FormFieldKey.enabledAddress(), viewModel: .init(title: "Enabled Address"))
                 ]
             )
         ]
@@ -138,6 +128,35 @@ extension FormDemoViewModel: FormFieldDelegate {
                     view.dataSource.removeField(FormFieldKey.twoFA())
                 }
             }
+        case FormFieldKey.enabledAddress.rawValue:
+            let enabledAddress = view.dataSource.getValue(
+                of: ToggleInputFormField.self,
+                byKey: FormFieldKey.enabledAddress()
+            )
+            if enabledAddress {
+                let addressSection = FormSection(
+                    key: FormSectionKey.address(),
+                    fields: [
+                        SelectInputFormField<Country>(
+                            key: FormFieldKey.country(),
+                            viewModel: .init(title: "Country"),
+                            dataSource: Country.list,
+                            router: router
+                        ),
+                        SelectInputFormField<Province>(
+                            key: FormFieldKey.province(),
+                            viewModel: .init(title: "Province"),
+                            router: router
+                        )
+                    ]
+                )
+                addressSection.fields.forEach {
+                    $0.delegate = self
+                }
+                view.dataSource.insertSection(addressSection, at: view.dataSource.sections.count)
+            } else {
+                view.dataSource.removeSection(withKey: FormSectionKey.address())
+            }
         default: break
         }
     }
@@ -150,18 +169,20 @@ extension FormDemoViewModel {
     enum FormSectionKey: String {
 
         case profile
-        case detail
+        case enabledAddress
+        case address
 
         func callAsFunction() -> String { rawValue }
     }
 
     enum FormFieldKey: String {
 
+        case fullName
         case username
         case password
         case enabled2FA
         case twoFA
-        case fullName
+        case enabledAddress
         case country
         case province
 
