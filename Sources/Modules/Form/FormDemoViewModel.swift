@@ -24,27 +24,32 @@ extension FormDemoViewModel: FormDemoViewOutput {
         view?.configure()
         let sections: [FormSection] = [
             .init(
+                key: FormSectionKey.profile(),
                 header: TitleFormHeader(key: "Profile", viewModel: .init(title: "PROFILE")),
                 fields: [
-                    TextInputFormField(key: FormKey.username(), viewModel: .init(title: "Username")),
-                    TextInputFormField(key: FormKey.password(), viewModel: .init(title: "Password", isSecure: true)),
-                    ToggleInputFormField(key: FormKey.remember(), viewModel: .init(title: "Remember me"))
+                    TextInputFormField(key: FormFieldKey.username(), viewModel: .init(title: "Username")),
+                    TextInputFormField(
+                        key: FormFieldKey.password(),
+                        viewModel: .init(title: "Password", isSecure: true)
+                    ),
+                    ToggleInputFormField(key: FormFieldKey.enabled2FA(), viewModel: .init(title: "Enabled 2FA"))
                 ]
             ),
             .init(
+                key: FormSectionKey.detail(),
                 fields: [
                     TextInputFormField(
-                        key: FormKey.fullName(),
+                        key: FormFieldKey.fullName(),
                         viewModel: .init(title: "Full Name", value: "Admin")
                     ),
                     SelectInputFormField<Country>(
-                        key: FormKey.country(),
+                        key: FormFieldKey.country(),
                         viewModel: .init(title: "Country"),
                         dataSource: Country.list,
                         router: router
                     ),
                     SelectInputFormField<Province>(
-                        key: FormKey.province(),
+                        key: FormFieldKey.province(),
                         viewModel: .init(title: "Province"),
                         router: router
                     )
@@ -60,18 +65,24 @@ extension FormDemoViewModel: FormDemoViewOutput {
     func didTapSaveButton() {
         guard let view = view else { return }
         var message = ""
-        let username = view.dataSource.getValue(of: TextInputFormField.self, byKey: FormKey.username())
+        let username = view.dataSource.getValue(of: TextInputFormField.self, byKey: FormFieldKey.username())
         message += "username: \(username)\n"
-        let password = view.dataSource.getValue(of: TextInputFormField.self, byKey: FormKey.password())
+        let password = view.dataSource.getValue(of: TextInputFormField.self, byKey: FormFieldKey.password())
         message += "password: \(password)\n"
-        let rememberMe = view.dataSource.getValue(of: ToggleInputFormField.self, byKey: FormKey.remember())
-        message += "rememberMe: \(rememberMe)\n"
-        let fullName = view.dataSource.getValue(of: TextInputFormField.self, byKey: FormKey.fullName())
+        let enabled2FA = view.dataSource.getValue(of: ToggleInputFormField.self, byKey: FormFieldKey.enabled2FA())
+        message += "enabled2FA: \(enabled2FA)\n"
+        let fullName = view.dataSource.getValue(of: TextInputFormField.self, byKey: FormFieldKey.fullName())
         message += "fullName: \(fullName)\n"
-        if let country = view.dataSource.getValue(of: SelectInputFormField<Country>.self, byKey: FormKey.country()) {
+        if let country = view.dataSource.getValue(
+            of: SelectInputFormField<Country>.self,
+            byKey: FormFieldKey.country()
+        ) {
             message += "country: \(country.title)\n"
         }
-        if let province = view.dataSource.getValue(of: SelectInputFormField<Province>.self, byKey: FormKey.province()) {
+        if let province = view.dataSource.getValue(
+            of: SelectInputFormField<Province>.self,
+            byKey: FormFieldKey.province()
+        ) {
             message += "province: \(province.title)\n"
         }
         router.presentAlert(with: message)
@@ -83,41 +94,73 @@ extension FormDemoViewModel: FormFieldDelegate {
     func fieldDidChangeValue(_ field: FormField) {
         guard let view = view else { return }
         switch field.key {
-        case FormKey.country.rawValue:
+        case FormFieldKey.country.rawValue:
             guard
-                let country = view.dataSource.getValue(of: SelectInputFormField<Country>.self, byKey: FormKey.country())
+                let country = view.dataSource.getValue(
+                    of: SelectInputFormField<Country>.self,
+                    byKey: FormFieldKey.country()
+                )
             else { return }
             if country.title == "Thailand" {
                 view.dataSource.updateDataSource(
                     for: SelectInputFormField<Province>.self,
                     with: Province.thaiProvinces,
-                    byKey: FormKey.province()
+                    byKey: FormFieldKey.province()
                 )
             } else {
                 view.dataSource.updateDataSource(
                     for: SelectInputFormField<Province>.self,
                     with: Province.vietProvinces,
-                    byKey: FormKey.province()
+                    byKey: FormFieldKey.province()
                 )
             }
             view.dataSource.updateValue(
                 for: SelectInputFormField<Province>.self,
                 with: nil,
-                byKey: FormKey.province()
+                byKey: FormFieldKey.province()
             )
+        case FormFieldKey.enabled2FA.rawValue:
+            let enabled2FA = view.dataSource.getValue(
+                of: ToggleInputFormField.self,
+                byKey: FormFieldKey.enabled2FA()
+            )
+            if enabled2FA {
+                if !view.dataSource.fields.contains(where: { $0.key == FormFieldKey.twoFA() }) {
+                    let fields = view.dataSource.fields(ofSection: FormSectionKey.profile())
+                    view.dataSource.insertField(
+                        TextInputFormField(key: FormFieldKey.twoFA(), viewModel: .init(title: "2FA Code")),
+                        at: fields.count,
+                        ofSection: FormSectionKey.profile()
+                    )
+                }
+            } else {
+                if view.dataSource.fields.contains(where: { $0.key == FormFieldKey.twoFA() }) {
+                    view.dataSource.removeField(FormFieldKey.twoFA())
+                }
+            }
         default: break
         }
     }
 }
 
 // MARK: - Form Keys
+
 extension FormDemoViewModel {
 
-    enum FormKey: String {
+    enum FormSectionKey: String {
+
+        case profile
+        case detail
+
+        func callAsFunction() -> String { rawValue }
+    }
+
+    enum FormFieldKey: String {
 
         case username
         case password
-        case remember
+        case enabled2FA
+        case twoFA
         case fullName
         case country
         case province

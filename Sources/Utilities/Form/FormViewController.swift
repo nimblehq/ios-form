@@ -63,8 +63,16 @@ extension FormViewController: FormDataSourceDelegate {
         tableView.reloadData()
     }
 
-    func dataSource(_ dataSource: FormDataSource, didUpdateAt indexPath: IndexPath) {
-        tableView.reloadRows(at: [indexPath], with: .automatic)
+    func dataSource(_ dataSource: FormDataSource, didUpdateAt indexPaths: [IndexPath]) {
+        tableView.reloadRows(at: indexPaths, with: .automatic)
+    }
+
+    func dataSource(_ dataSource: FormDataSource, didInsertAt indexPaths: [IndexPath]) {
+        tableView.insertRows(at: indexPaths, with: .automatic)
+    }
+
+    func dataSource(_ dataSource: FormDataSource, didRemoveAt indexPaths: [IndexPath]) {
+        tableView.deleteRows(at: indexPaths, with: .automatic)
     }
 }
 

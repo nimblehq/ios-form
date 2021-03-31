@@ -10,7 +10,9 @@ import Foundation
 protocol FormDataSourceDelegate: AnyObject {
 
     func dataSourceDidChangeSections(_ dataSource: FormDataSource)
-    func dataSource(_ dataSource: FormDataSource, didUpdateAt indexPath: IndexPath)
+    func dataSource(_ dataSource: FormDataSource, didUpdateAt indexPaths: [IndexPath])
+    func dataSource(_ dataSource: FormDataSource, didInsertAt indexPaths: [IndexPath])
+    func dataSource(_ dataSource: FormDataSource, didRemoveAt indexPaths: [IndexPath])
 }
 
 final class FormDataSource {
@@ -61,9 +63,27 @@ final class FormDataSource {
         }
     }
 
+    func fields(ofSection key: String) -> [FormField] {
+        guard let section = sections.first(where: { $0.key == key }) else { return [] }
+        return section.fields
+    }
+
+    func insertField(_ field: FormField, at index: Int, ofSection key: String) {
+        guard let section = sections.firstIndex(where: { $0.key == key }) else { return }
+        sections[section].fields.insert(field, at: index)
+        let indexPath = IndexPath(row: index, section: section)
+        delegate?.dataSource(self, didInsertAt: [indexPath])
+    }
+
+    func removeField(_ key: String) {
+        guard let indexPath = self.indexPath(of: key) else { return }
+        sections[indexPath.section].fields.remove(at: indexPath.row)
+        delegate?.dataSource(self, didRemoveAt: [indexPath])
+    }
+
     private func reloadField(by key: String) {
         guard let indexPath = indexPath(of: key) else { return }
-        delegate?.dataSource(self, didUpdateAt: indexPath)
+        delegate?.dataSource(self, didUpdateAt: [indexPath])
     }
 
     private func indexPath(of key: String) -> IndexPath? {

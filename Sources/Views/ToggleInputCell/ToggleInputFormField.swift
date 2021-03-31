@@ -59,5 +59,6 @@ extension ToggleInputFormField: ToggleInputCellDelegate {
 
     func cell(_ cell: ToggleInputCell, didChangeValue value: Bool) {
         viewModel.value = value
+        delegate?.fieldDidChangeValue(self)
     }
 }
