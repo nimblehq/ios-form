@@ -80,12 +80,12 @@ extension FormViewController: FormDataSourceDelegate {
 
     func dataSource(_ dataSource: FormDataSource, didInsertSectionAt sections: IndexSet) {
         tableView.performBatchUpdates {
-            tableView.insertSections(sections, with: .automatic)
+            tableView.insertSections(sections, with: .fade)
         }
     }
 
     func dataSource(_ dataSource: FormDataSource, didRemoveSectionAt sections: IndexSet) {
-        tableView.deleteSections(sections, with: .automatic)
+        tableView.deleteSections(sections, with: .fade)
     }
 }
 
