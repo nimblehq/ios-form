@@ -37,6 +37,9 @@
 		905C753F260B321400B308DD /* FormSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905C753E260B321400B308DD /* FormSection.swift */; };
 		905C7558260B3C8D00B308DD /* TextInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905C7557260B3C8D00B308DD /* TextInputCell.swift */; };
 		905C7560260B3EFE00B308DD /* TextInputFormField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905C755F260B3EFE00B308DD /* TextInputFormField.swift */; };
+		907350BA2615812000E4A41C /* DateInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907350B92615812000E4A41C /* DateInputCell.swift */; };
+		907350C22615820200E4A41C /* DateInputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907350C12615820200E4A41C /* DateInputViewModel.swift */; };
+		907350C72615821B00E4A41C /* DateInputFormField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907350C62615821B00E4A41C /* DateInputFormField.swift */; };
 		9084086E2612D0E400E3F07B /* ToggleInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9084086D2612D0E400E3F07B /* ToggleInputCell.swift */; };
 		9084087B2612D16E00E3F07B /* ToggleInputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9084087A2612D16E00E3F07B /* ToggleInputViewModel.swift */; };
 		908408802612D1A500E3F07B /* ToggleInputFormField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9084087F2612D1A500E3F07B /* ToggleInputFormField.swift */; };
@@ -107,6 +110,9 @@
 		905C753E260B321400B308DD /* FormSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormSection.swift; sourceTree = "<group>"; };
 		905C7557260B3C8D00B308DD /* TextInputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputCell.swift; sourceTree = "<group>"; };
 		905C755F260B3EFE00B308DD /* TextInputFormField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputFormField.swift; sourceTree = "<group>"; };
+		907350B92615812000E4A41C /* DateInputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateInputCell.swift; sourceTree = "<group>"; };
+		907350C12615820200E4A41C /* DateInputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateInputViewModel.swift; sourceTree = "<group>"; };
+		907350C62615821B00E4A41C /* DateInputFormField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateInputFormField.swift; sourceTree = "<group>"; };
 		9084086D2612D0E400E3F07B /* ToggleInputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleInputCell.swift; sourceTree = "<group>"; };
 		9084087A2612D16E00E3F07B /* ToggleInputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleInputViewModel.swift; sourceTree = "<group>"; };
 		9084087F2612D1A500E3F07B /* ToggleInputFormField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleInputFormField.swift; sourceTree = "<group>"; };
@@ -338,12 +344,23 @@
 		905C7556260B3B1900B308DD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				907350B82615810000E4A41C /* DateInputCell */,
 				9084086C2612D0CB00E3F07B /* ToggleInputCell */,
 				900FF1A4260D91DE001641C2 /* SelectInputCell */,
 				9024BFFF260C4EDC009E248D /* TitleHeader */,
 				905C7549260B339800B308DD /* TextInputCell */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		907350B82615810000E4A41C /* DateInputCell */ = {
+			isa = PBXGroup;
+			children = (
+				907350B92615812000E4A41C /* DateInputCell.swift */,
+				907350C12615820200E4A41C /* DateInputViewModel.swift */,
+				907350C62615821B00E4A41C /* DateInputFormField.swift */,
+			);
+			path = DateInputCell;
 			sourceTree = "<group>";
 		};
 		9084086C2612D0CB00E3F07B /* ToggleInputCell */ = {
@@ -649,6 +666,7 @@
 				900FF1C7260D987D001641C2 /* SelectViewModel.swift in Sources */,
 				905C751D260B25E700B308DD /* FormViewController.swift in Sources */,
 				905C7525260B264A00B308DD /* FormDemoRouter.swift in Sources */,
+				907350C72615821B00E4A41C /* DateInputFormField.swift in Sources */,
 				900FF1A6260D9265001641C2 /* SelectInputCell.swift in Sources */,
 				905C7535260B2ED900B308DD /* FormField.swift in Sources */,
 				900FF1CC260D988A001641C2 /* SelectModule.swift in Sources */,
@@ -659,6 +677,7 @@
 				905C749F260B228800B308DD /* AppDelegate.swift in Sources */,
 				9024BFF8260C3D68009E248D /* TextInputViewModel.swift in Sources */,
 				905C750E260B25C600B308DD /* FormDemoModule.swift in Sources */,
+				907350C22615820200E4A41C /* DateInputViewModel.swift in Sources */,
 				900FF1B9260D9752001641C2 /* SelectViewController.swift in Sources */,
 				905C74A1260B228800B308DD /* SceneDelegate.swift in Sources */,
 				905C7560260B3EFE00B308DD /* TextInputFormField.swift in Sources */,
@@ -672,6 +691,7 @@
 				908408802612D1A500E3F07B /* ToggleInputFormField.swift in Sources */,
 				905C7513260B25D000B308DD /* FormDemoViewController.swift in Sources */,
 				9024BFEE260C3665009E248D /* FormDataSource.swift in Sources */,
+				907350BA2615812000E4A41C /* DateInputCell.swift in Sources */,
 				9024C001260C4EEC009E248D /* TitleFormHeader.swift in Sources */,
 				9084086E2612D0E400E3F07B /* ToggleInputCell.swift in Sources */,
 				900FF1AB260D92D0001641C2 /* SelectInputViewModel.swift in Sources */,

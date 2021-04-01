@@ -118,6 +118,7 @@ extension FormDemoViewModel: FormDemoViewOutput {
                         key: FormFieldKey.password(),
                         viewModel: .init(title: "Password", isSecure: true)
                     ),
+                    DateInputFormField(key: FormFieldKey.birthday(), viewModel: .init(title: "Birthday")),
                     ToggleInputFormField(key: FormFieldKey.enabled2FA(), viewModel: .init(title: "Enabled 2FA"))
                 ]
             ),
@@ -143,6 +144,9 @@ extension FormDemoViewModel: FormDemoViewOutput {
         message += "username: \(username)\n"
         let password = view.dataSource.getValue(of: TextInputFormField.self, byKey: FormFieldKey.password())
         message += "password: \(password)\n"
+        if let birthday = view.dataSource.getValue(of: DateInputFormField.self, byKey: FormFieldKey.birthday()) {
+            message += "birthday: \(birthday)\n"
+        }
         let enabled2FA = view.dataSource.getValue(of: ToggleInputFormField.self, byKey: FormFieldKey.enabled2FA())
         message += "enabled2FA: \(enabled2FA)\n"
         if enabled2FA {
@@ -175,7 +179,6 @@ extension FormDemoViewModel: FormDemoViewOutput {
 extension FormDemoViewModel: FormFieldDelegate {
 
     func fieldDidChangeValue(_ field: FormField) {
-        guard let view = view else { return }
         switch field.key {
         case FormFieldKey.country.rawValue:
             configureProvinceAfterSelectCountry()
@@ -206,6 +209,7 @@ extension FormDemoViewModel {
         case fullName
         case username
         case password
+        case birthday
         case enabled2FA
         case twoFA
         case enabledAddress
