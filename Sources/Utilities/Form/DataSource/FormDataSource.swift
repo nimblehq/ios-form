@@ -10,9 +10,12 @@ import Foundation
 protocol FormDataSourceDelegate: AnyObject {
 
     func dataSourceDidChangeSections(_ dataSource: FormDataSource)
+    func dataSourceDidReloadTableView(_ dataSource: FormDataSource)
     func dataSource(_ dataSource: FormDataSource, didUpdateAt indexPaths: [IndexPath])
     func dataSource(_ dataSource: FormDataSource, didInsertAt indexPaths: [IndexPath])
     func dataSource(_ dataSource: FormDataSource, didRemoveAt indexPaths: [IndexPath])
+    func dataSource(_ dataSource: FormDataSource, didInsertSectionAt sections: IndexSet)
+    func dataSource(_ dataSource: FormDataSource, didRemoveSectionAt sections: IndexSet)
 }
 
 final class FormDataSource {
@@ -31,6 +34,7 @@ final class FormDataSource {
 
     func updateSections(_ sections: [FormSection]) {
         self.sections = sections
+        delegate?.dataSourceDidReloadTableView(self)
     }
 
     func updateValue<Field: FieldDataSource>(for formField: Field.Type, with value: Field.Value, byKey key: String) {
@@ -79,6 +83,18 @@ final class FormDataSource {
         guard let indexPath = self.indexPath(of: key) else { return }
         sections[indexPath.section].fields.remove(at: indexPath.row)
         delegate?.dataSource(self, didRemoveAt: [indexPath])
+    }
+
+    func insertSection(_ section: FormSection, at index: Int) {
+        sections.insert(section, at: index)
+        delegate?.dataSource(self, didInsertSectionAt: IndexSet(integer: index))
+    }
+
+    func removeSection(withKey key: String) {
+        if let index = sections.firstIndex(where: { $0.key == key }) {
+            sections.remove(at: index)
+            delegate?.dataSource(self, didRemoveSectionAt: .init(integer: index))
+        }
     }
 
     private func reloadField(by key: String) {

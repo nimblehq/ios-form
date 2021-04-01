@@ -179,13 +179,13 @@
 			path = Select;
 			sourceTree = "<group>";
 		};
-		9024BFFF260C4EDC009E248D /* Header */ = {
+		9024BFFF260C4EDC009E248D /* TitleHeader */ = {
 			isa = PBXGroup;
 			children = (
 				9024C000260C4EEC009E248D /* TitleFormHeader.swift */,
 				9024C008260C5F8F009E248D /* TitleHeaderFooterView.swift */,
 			);
-			path = Header;
+			path = TitleHeader;
 			sourceTree = "<group>";
 		};
 		905C7492260B228800B308DD = {
@@ -340,7 +340,7 @@
 			children = (
 				9084086C2612D0CB00E3F07B /* ToggleInputCell */,
 				900FF1A4260D91DE001641C2 /* SelectInputCell */,
-				9024BFFF260C4EDC009E248D /* Header */,
+				9024BFFF260C4EDC009E248D /* TitleHeader */,
 				905C7549260B339800B308DD /* TextInputCell */,
 			);
 			path = Views;
