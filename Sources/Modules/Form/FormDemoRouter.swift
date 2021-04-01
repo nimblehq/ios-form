@@ -30,6 +30,12 @@ extension FormDemoRouter: FormDemoRouterInput {
         let navigationController = UINavigationController(rootViewController: viewController)
         window.rootViewController = navigationController
     }
+
+    func presentAlert(with message: String) {
+        let alert = UIAlertController(title: "iOSForm", message: message, preferredStyle: .alert)
+        alert.addAction(.init(title: "OK", style: .default, handler: nil))
+        viewController?.present(alert, animated: true, completion: nil)
+    }
 }
 
 // MARK: - OpenSelectRouterInput

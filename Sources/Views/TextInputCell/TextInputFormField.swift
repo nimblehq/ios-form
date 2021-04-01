@@ -43,9 +43,9 @@ extension TextInputFormField: FormField {
 
 extension TextInputFormField: FieldDataSource {
 
-    var value: String? {
+    var value: String {
         get {
-            viewModel.value
+            viewModel.value ?? ""
         }
         set {
             viewModel.value = newValue
