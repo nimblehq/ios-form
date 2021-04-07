@@ -50,11 +50,11 @@ extension FormViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     let field = dataSource.sections[indexPath.section].fields[indexPath.row]
     return field.height
-    }
+  }
 
   func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
     dataSource.sections[section].header?.dequeue(for: tableView, in: section)
-    }
+  }
 
   func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
     guard let header = dataSource.sections[section].header else { return .zero }
@@ -102,7 +102,7 @@ final class FormSection {
 
 A object conform to `FormHeader` protocol, it will contains only the configuration of a header.
 
-With `FormHeader`, easy to create and maintain a header in a `FormSection`.
+`FormHeader` makes it easy to create and maintain a header in a `FormSection`.
 
 ```swift
 import UIKit
@@ -151,7 +151,7 @@ extension TitleFormHeader: FormHeader {
 
 #### FormField
 
-`FormField` is the most important protocol, for cells in table view, we will have field objects that carry the logic configuration of a view. We will create fields that conform `FormField` for all the cells we want to display in a table view.
+`FormField` is the most important protocol. For cells in table view, we will have field objects that carry the logic configuration of a view. We will create fields that conform `FormField` for all the cells we want to display in a table view.
 
 ```swift
 protocol FormField: AnyObject {
@@ -171,15 +171,15 @@ Here is an example about an implementation of `FormField`
 ```swift
 final class TextInputFormField {
 
-    let key: String
-    var viewModel: TextInputViewModel
+  let key: String
+  var viewModel: TextInputViewModel
 
-    weak var delegate: FormFieldDelegate?
+  weak var delegate: FormFieldDelegate?
 
-    init(key: String, viewModel: TextInputViewModel) {
-        self.key = key
-        self.viewModel = viewModel
-    }
+  init(key: String, viewModel: TextInputViewModel) {
+    self.key = key
+    self.viewModel = viewModel
+  }
 }
 
 // MARK: - FormField
