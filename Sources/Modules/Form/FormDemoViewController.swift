@@ -37,7 +37,7 @@ extension FormDemoViewController {
     private func setUpLayout() {}
 
     private func setUpViews() {
-        navigationItem.title = "Form Demo"
+        navigationItem.title = "Registration Form"
         view.backgroundColor = .white
 
         navigationItem.rightBarButtonItem = UIBarButtonItem(
